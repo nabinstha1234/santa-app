@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start:vite": "vite --port 3000",
-    "start": "node -r dotenv/config server.js"
+    "start": "node -r dotenv/config server.js",
+    "prettify": "prettier --write"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^3.1.0",
@@ -15,13 +16,21 @@
     "morgan": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "request": "^2.88.2"
+    "react-spinners": "^0.13.8",
+    "request": "^2.88.2",
+    "sanitize.css": "^13.0.0",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.34",
     "@types/react-dom": "^18.0.11",
+    "postcss-styled-syntax": "^0.6.4",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.6.0",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1"
+    "vite": "^4.2.1",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "engines": {
     "node": "16.x"
