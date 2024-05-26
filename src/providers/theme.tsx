@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import { Theme } from 'constants/theme';
 import { theme } from 'theme';

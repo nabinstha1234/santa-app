@@ -9,8 +9,8 @@ const override: CSSProperties = {
 };
 
 export type SpinnerProps = {
-  size: number;
-  color: string;
+  size?: number;
+  color?: string;
   loading?: boolean;
   cssOverride?: CSSProperties;
   ariaLabel?: string;
