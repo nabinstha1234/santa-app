@@ -7,7 +7,14 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   resolve: {
     alias: {
-      src: '/src',
+      src: 'client/src',
+    },
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: 'client/src/main.tsx',
     },
   },
 });
