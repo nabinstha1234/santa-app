@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^3.1.0",
+    "axios": "^1.7.2",
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",
     "dotenv": "^16.0.3",
@@ -20,10 +21,12 @@
     "morgan": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.5",
     "react-spinners": "^0.13.8",
     "request": "^2.88.2",
     "sanitize.css": "^13.0.0",
     "styled-components": "^6.1.11",
+    "sweetalert2": "^11.11.0",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
