@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('../routes');
 const errorHandler = require('../middlewares/errorHandler');
-const cornJobs = require("../cornJobs/emailCorn");
+const cornJobs = require('../cornJobs/emailCorn');
 
 module.exports = ({ app }) => {
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,7 +27,7 @@ module.exports = ({ app }) => {
   });
 
   app.use(errorHandler);
-  
-  // All corn jobs 
+
+  // All corn jobs
   cornJobs.emailCorn.start();
 };

@@ -10,11 +10,4 @@ export default defineConfig({
       src: 'client/src',
     },
   },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: 'client/src/main.tsx',
-    },
-  }
 });

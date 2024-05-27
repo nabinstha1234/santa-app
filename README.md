@@ -1,67 +1,130 @@
-# IMPORTANT! READ before starting
+# Santa App
 
-By default for anonymous users (non logged in), your code and app will only remain on glitch.com for 5 days.
-In order to not lose your challenge, please create a glitch.com account and log in to glitch.com before proceeding.
+A simple Node.js application built on Express and React, instantly up and running.
 
-The following README contains instructions to guide you through the coding challenge, please read them carefully.
+## Table of Contents
 
-# JS coding challenge:
+- [Description](#description)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [DevDependencies](#devdependencies)
+- [Contributing](#contributing)
+- [License](#license)
 
-## How to create and submit your app using glitch
+## Description
 
-1. **Login to glitch**: make sure you are logged in to glitch.com
+Santa App is a lightweight, scalable Node.js application that leverages the power of Express for server-side logic and React for client-side interactions. It's designed to be easy to set up and extend, making it ideal for both beginner and professional developers.
 
-2. **Clone**: Go to this URL: https://glitch.com/~js-santa-app and click the `Remix your own` button to clone the code. This will copy all the code to a new, randomly generated URL (e.g. https://glitch.com/edit/#!/capable-toothpaste). This is your URL to code on, no other candidates will have this URL.
+## Features
 
-3. **Code**: You can edit the code directly in the Glitch editor or use your editor of choice (VSCode, Sublime, etc) and copy paste the files into Glitch. Git import and export is also available in the Tools menu on the bottom left. How you edit the code is entirely up to you, so long as your finished work is viewable at the URL created in the previous step.
+- **Express Server**: Fast, unopinionated, minimalist web framework for Node.js.
+- **React Frontend**: Build modern, interactive user interfaces.
+- **Vite**: Next-generation frontend tooling for fast builds and hot module replacement.
+- **Environment Configuration**: Manage environment variables with `dotenv`.
+- **Form Handling**: Robust form validation and handling using `react-hook-form` and `joi`.
+- **Email Notifications**: Send emails using `nodemailer`.
+- **Scheduled Tasks**: Schedule cron jobs with `node-cron`.
+- **Logging**: Comprehensive logging with `winston` and `winston-daily-rotate-file`.
+- **Styling**: Use `styled-components` for component-level styling.
+- **Alerts**: SweetAlert2 for beautiful, responsive, customizable popups.
+- **Testing**: Comprehensive testing setup using Jest and React Testing Library.
 
-> **NOTE**: Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+## Installation
 
-4. **Turn in**: When you finish coding, send your URL to us so we can review your code.
+To get started with Santa App, clone the repository and install the dependencies:
 
-## Objectives overview:
+[Read Installation Instructions](/docs/requirements/README.md)
+```bash
+npm install
+```
 
-The webapp should display a form for children to enter their id and a free text message to santa.
+## Usage
 
-When submitting the form, the server should check:
+### Development
 
-1.  that the child is registered
-2.  that the child is less than 10 years old.
-    To this purpose, the server can fetch user and profiles data in JSON format from:
+Start the development server:
 
-- https://raw.githubusercontent.com/alj-devops/santa-data/master/userProfiles.json
-- https://raw.githubusercontent.com/alj-devops/santa-data/master/users.json
+```bash
+npm run start:vite
+```
 
-If the child is not registered (no match for the user id) or more than 10years old, the webapp should display a basic error page with an error message explaining the problem.\
-If the child is registered and less than 10 years old, the server should show a page indicating that the request has been received.
+This will start the Vite development server on port 3000
 
-Every 15seconds, the server should send an email with information on all pending (not yet sent) requests including:
+### Production
 
-- child username (eg. charlie.brown)
-- child's address (eg. 219-1130, Ikanikeisaiganaibaai, Musashino-shi, Tokyo)
-- request free text as was input in the form
+Build the application for production:
 
-Email sender should be set as do_not_reply@northpole.com, and sent to santa@northpole.com
+```bash
+npm run build:vite
+```
 
-## Tips and detailed instructions:
+### Start the production server:
 
-- Somebody started to work on the app, but left it unfinished and did not use any modern technology. We added React for you to have a clean base but feel free to use any other technology you might prefer.
-- The UI and UX of the application for this challenge is not the priority. The pages/email do not need to look good, as long as they convey the information effectively.
-- You should fetch the JSON data at every form submission (consider it as an API).
-- For the sake of the challenge, you can keep the requests in-memory only.
-- You are encouraged to select and use npm packages as needed (you can add packages by editing package.json, or using `npm install` from the glitch console).
-- To get an smtp server for emails, go to https://ethereal.email/ and click "Create Ethereal Account".\
-  This will give you an account (take note of your username and pwd if you need to re-logon later) and smtp server (actual emails do not get delivered).\
-  Go to https://ethereal.email/messages to see the emails that have been received by the smtp server.
+```bash
+npm start
+```
 
-## Some things we will look for in your submission
+## Scripts
 
-- Code quality (readability, use of modern syntax...)
-- Does the app work as designed (cf. objectives overview)
-- App architecture (folder structure, configuration management...)
-- Documentation (why did you choose to change or add a package...)
+- **start:vite**: Start the Vite development server.
+- **start**: Start the Express server with `dotenv` configuration.
+- **build:vite**: Build the frontend using Vite.
+- **test**: Run tests using Jest.
+- **prettify**: Format the code using Prettier.
 
-## Tips on usage of glitch
+## Dependencies
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-When your app is running, you can access logs and console using the "Tools" button at the bottom left.
+- `@vitejs/plugin-react`: Vite plugin for React.
+- `axios`: Promise based HTTP client for the browser and node.js.
+- `body-parser`: Node.js body parsing middleware.
+- `colors`: Get colors in your node.js console.
+- `cors`: Middleware to enable Cross-Origin Resource Sharing.
+- `dotenv`: Loads environment variables from a `.env` file into `process.env`.
+- `express`: Fast, unopinionated, minimalist web framework.
+- `joi`: Powerful schema description language and data validator for JavaScript.
+- `morgan`: HTTP request logger middleware for node.js.
+- `node-cron`: A simple cron-like job scheduler for Node.js.
+- `nodemailer`: Easy as cake e-mail sending from your Node.js applications.
+- `react`: A JavaScript library for building user interfaces.
+- `react-dom`: Serves as the entry point to the DOM and server renderers for React.
+- `react-hook-form`: Performant, flexible and extensible forms with easy-to-use validation.
+- `react-spinners`: A collection of loading spinner components for React.
+- `request`: Simplified HTTP client.
+- `sanitize.css`: A best-practices CSS foundation.
+- `styled-components`: Visual primitives for the component age.
+- `sweetalert2`: A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes.
+- `winston`: A logger for just about everything.
+- `winston-daily-rotate-file`: A transport for winston which logs to a rotating file each day.
+
+## DevDependencies
+
+- `@testing-library/jest-dom`: Custom jest matchers to test the state of the DOM.
+- `@testing-library/react`: Simple and complete React DOM testing utilities.
+- `@types/jest`: TypeScript definitions for Jest.
+- `@types/react`: TypeScript definitions for React.
+- `@types/react-dom`: TypeScript definitions for React DOM.
+- `identity-obj-proxy`: Useful for mocking CSS modules in Jest.
+- `jest`: Delightful JavaScript testing.
+- `jest-environment-jsdom`: Jest environment for testing with jsdom.
+- `jest-styled-components`: Jest utilities for Styled Components.
+- `jest-transformer-svg`: Jest transformer for SVG files.
+- `postcss-styled-syntax`: PostCSS syntax for styled-components.
+- `prettier`: An opinionated code formatter.
+- `stylelint`: A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.
+- `stylelint-config-standard`: The standard shareable config for Stylelint.
+- `ts-jest`: A Jest transformer with source map support that lets you use Jest to test projects written in TypeScript.
+- `ts-node`: TypeScript execution and REPL for node.js.
+- `typescript`: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+- `vite`: Next-generation frontend tooling.
+- `vite-tsconfig-paths`: Support for TypeScript's path mapping in Vite.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

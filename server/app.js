@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const loaders = require('./loaders');
 
 /**
@@ -17,7 +18,7 @@ process.on('unhandledRejection', (reason, promise) => {
   });
 });
 
-app.use(express.static(`${__dirname}/static`));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 loaders({ app });
 
