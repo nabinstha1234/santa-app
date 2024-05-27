@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 // Project imports
 import { CurrentThemeContext } from 'providers/theme';
 import { ToggleButtonComponent } from 'components/atoms';
-import { Nav } from 'components/molecules';
+import { Nav, ErrorList } from 'components/molecules';
 import { MainWrapper, SantaFormWithHookForm } from 'components/organisms';
 import { Theme } from 'constants/theme';
 import SantaMessageService from './SantaMessageService';
@@ -12,32 +12,56 @@ import SantaMessageService from './SantaMessageService';
 type Props = {};
 
 type InputData = {
-  userid: string;
-  wish: string;
+  username: string;
+  message: string;
 };
 
 export const Home = (props: Props) => {
   const { currentTheme, setCurrentTheme } = useContext(CurrentThemeContext);
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleThemeToggle = () => {
     setCurrentTheme(currentTheme === Theme.Light ? Theme.Dark : Theme.Light);
   };
 
   const handleFormSubmit = (data: InputData) => {
+    setIsSubmitting(true);
+    setErrors([]);
     SantaMessageService.create(data)
-      .then(() => {
+      .then((response) => {
         Swal.fire({
           title: 'Good job!',
           text: 'Your message has been sent to Santa!',
           icon: 'success',
           confirmButtonText: 'Ok',
+        }).then(() => {
+          window.location.reload();
         });
       })
       .catch((error) => {
-        alert(
-          'There was an error sending your message to Santa. Please try again later.',
-        );
+        const { data } = error;
+        const { details } = data;
+
+        if (details) {
+          setErrors(details);
+          return;
+        }
+
+        if (!details && data.message) {
+          setErrors([data.message]);
+          return;
+        }
+
+        Swal.fire({
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
 
@@ -50,7 +74,11 @@ export const Home = (props: Props) => {
         ></ToggleButtonComponent>
       </Nav>
       <MainWrapper>
-        <SantaFormWithHookForm onSubmit={handleFormSubmit} />
+        {errors && <ErrorList errors={errors} />}
+        <SantaFormWithHookForm
+          isLoading={isSubmitting}
+          onSubmit={handleFormSubmit}
+        />
       </MainWrapper>
     </>
   );

@@ -10,7 +10,7 @@ import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
  */
 
 // The base API URL is fetched from the environment variable REACT_BASE_API_URL
-const BASE_API_URL = process.env.REACT_APP_API_URL;
+const BASE_API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 /**
  * IHttp interface

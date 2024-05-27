@@ -3,7 +3,7 @@ const Joi = require('joi');
 const strings = require('../config/strings');
 
 const messages = {
-  userId: {
+  username: {
     'string.base': strings.messageSenderUserId,
     'string.empty': strings.messageSenderUserId,
     'string.required': strings.messageSenderUserId,
@@ -18,7 +18,7 @@ const messages = {
 };
 
 const create = Joi.object({
-  userId: Joi.string().required().messages(messages.userId),
+  username: Joi.string().required().messages(messages.username),
   message: Joi.string().required().messages(messages.messages),
 });
 

@@ -16,7 +16,7 @@
  */
 module.exports = {
   validationError: 'Validation error',
-  messageSenderUserId: 'Sender user ID should be non empty string',
+  messageSenderUserId: 'Sender username should be non empty string',
   messageToSanta: 'Message to Santa should be non empty string',
   santaMessageListedSuccess: 'User listed',
   santaMessageUpdateSuccess: 'User updated',

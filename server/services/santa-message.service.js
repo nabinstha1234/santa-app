@@ -4,6 +4,7 @@ const santaMessageRepository =
   require('../repository/santa-message.repository')();
 const errorService = require('../services/error.service')();
 const logger = require('../utils/winstonLogger')('userService');
+const { NotImplementedError } = require('../utils/ApiError');
 
 const santaMessageService = () => {
   const name = 'santaMessageService';
@@ -22,21 +23,10 @@ const santaMessageService = () => {
     const pagingArgs = paging.getPagingArgs(args);
 
     try {
-      let { rows, count } =
-        await santaMessageRepository.getAllAndCount(pagingArgs);
-
-      const pagingMeta = paging.getPagingResult(pagingArgs, { total: count });
-
-      logger.info({
-        operation,
-        message: 'Get all Message to santa',
-        data: args,
+      throw NotImplementedError({
+        message: 'this service is  not implemented',
+        details: null,
       });
-
-      return {
-        paging: pagingMeta,
-        results: rows,
-      };
     } catch (err) {
       errorService.throwError({
         err,
@@ -56,9 +46,10 @@ const santaMessageService = () => {
   const getById = async (args = {}) => {
     const operation = 'getById';
     try {
-      const _id = args?._id;
-      let message = await santaMessageRepository.getById({ _id });
-      return message;
+      throw NotImplementedError({
+        message: 'this service is  not implemented',
+        details: null,
+      });
     } catch (err) {
       errorService.throwError({
         err,
@@ -78,14 +69,14 @@ const santaMessageService = () => {
    */
   const create = async (args) => {
     const operation = 'create';
-
     try {
-      const user = await santaMessageRepository.create({
-        userId: args.userId,
+      const message = await santaMessageRepository.create({
+        username: args.username,
         message: args.message,
+        address: args.address,
       });
 
-      return user;
+      return message;
     } catch (err) {
       errorService.throwError({
         err,
@@ -105,16 +96,11 @@ const santaMessageService = () => {
    */
   const update = async (args = {}) => {
     const operation = 'update';
-    const _id = args?._id;
-    const message = args?.message;
-
     try {
-      let updated = await santaMessageRepository.update({
-        _id,
-        message,
+      throw NotImplementedError({
+        message: 'this service is  not implemented',
+        details: null,
       });
-
-      return updated;
     } catch (err) {
       errorService.throwError({
         err,
@@ -134,11 +120,10 @@ const santaMessageService = () => {
   const deleteById = async (args = {}) => {
     const operation = 'delete';
     try {
-      const _id = args?._id;
-
-      let deletedUser = await santaMessageRepository.deleteById({ _id });
-
-      return deletedUser;
+      throw NotImplementedError({
+        message: 'this service is  not implemented',
+        details: null,
+      });
     } catch (err) {
       errorService.throwError({
         err,
