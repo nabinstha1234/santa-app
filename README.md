@@ -143,6 +143,23 @@ npm run test:coverage
 
 We encourage you to write tests for any new features or areas of the codebase you find are lacking coverage. Every bit helps!
 
+## To-Do List (Future Versions)
+
+Here's a list of tasks planned for future versions of the Santa App:
+
+1. **API Documentation**: Create comprehensive API documentation using tools like Swagger or Postman.
+2. **Increase Test Coverage**: Improve test coverage to ensure more robust codebase testing.
+3. **Component Testing**: Implement component-level testing using tools like React Testing Library or Enzyme.
+4. **Snapshot Testing**: Introduce snapshot testing to ensure UI components render correctly over time.
+5. **Internationalization**: Add support for multiple languages using i18n libraries such as react-intl.
+6. **Performance Monitoring**: Integrate performance monitoring tools like New Relic or Sentry to track and improve app performance.
+7. **Code Analysis and Security Testing**: Configure SonarQube for code analysis and security testing to identify and fix code quality issues.
+8. **Dockerization**: Dockerize the application for better portability and easier testing.
+9. **CI/CD Implementation**: Implement Continuous Integration and Continuous Deployment (CI/CD) pipelines using GitHub Actions or other CI/CD tools.
+10. **Write Guidelines**: Document guidelines for contribution, development, and deployment processes to streamline collaboration and onboarding for new contributors.
+
+Feel free to contribute additional ideas or suggestions for future versions!
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any changes. [DETAIL GUIDE](./CODE_OF_CONDUCT.md)
