@@ -7,6 +7,7 @@ class CustomError extends Error {
     this.details = details;
     this.data = data || null;
     this.message = message;
+    this.error = error;
     Error.captureStackTrace(this, this.constructor);
   }
 }

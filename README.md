@@ -37,6 +37,7 @@ Santa App is a lightweight, scalable Node.js application that leverages the powe
 To get started with Santa App, clone the repository and install the dependencies:
 
 [Read Installation Instructions](/docs/requirements/README.md)
+
 ```bash
 npm install
 ```
@@ -74,6 +75,9 @@ npm start
 - **build:vite**: Build the frontend using Vite.
 - **test**: Run tests using Jest.
 - **prettify**: Format the code using Prettier.
+- **cypress:run**: It runs the cypress test.
+- **cypress:open**: It opens the interactive cypress end to end test in the browsers.
+- **test:coverage**: To generate the test coverage report
 
 ## Dependencies
 
@@ -121,10 +125,36 @@ npm start
 - `vite`: Next-generation frontend tooling.
 - `vite-tsconfig-paths`: Support for TypeScript's path mapping in Vite.
 
+## Test Coverage
+
+Currently, the Santa App has around 5% test coverage, with only a few functions tested. Increasing test coverage is a priority, and contributions are welcome! If you are interested in improving the test coverage, please see the contribution guidelines.
+
+To run the tests and see the current coverage:
+
+```bash
+npm run test
+```
+
+For generating a test coverage report:
+
+```bash
+npm run test:coverage
+```
+
+We encourage you to write tests for any new features or areas of the codebase you find are lacking coverage. Every bit helps!
+
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
+Contributions are welcome! Please open an issue or submit a pull request for any changes. [DETAIL GUIDE](./CODE_OF_CONDUCT.md)
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Reference
+
+[My React Dashboard boiler plate](https://github.com/nabinstha1234/react-materal-dashboard)
+
+[My React Node Js boilerplate](https://github.com/nabinstha1234/node-mongo-boilerplate-with-firebase-auth)
+
+[Cypress Real World App](https://github.com/cypress-io/cypress-realworld-app/tree/develop)

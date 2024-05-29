@@ -3,8 +3,8 @@ import React from 'react';
 
 // Project imports
 import { ReactErrorBoundary } from 'components/organisms';
-import { Spinner, BackDrop, Button } from 'components/molecules';
-import { Typography } from 'components/atoms';
+import { Spinner, BackDrop } from 'components/molecules';
+import { Typography, Button } from 'components/atoms';
 import { GlobalThemeProvider } from 'providers/theme';
 
 const ErrorFallback = () => {

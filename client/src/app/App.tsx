@@ -5,7 +5,7 @@ import 'sanitize.css';
 
 // Project imports
 import { AppProvider } from 'providers/app';
-import { Home } from 'components/organisms';
+import { Home } from 'components/pages/Home';
 import { Theme } from 'constants/theme';
 
 function App() {
